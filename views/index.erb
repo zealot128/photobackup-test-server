@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head> <title>Photo-Server Test-Server</title>
+
+    <style type='text/css'>
+      body{margin:40px
+        auto;max-width:650px;line-height:1.6;font-size:18px;color:#444;padding:0
+        10px}h1,h2,h3{line-height:1.2}</style>
+  </head>
+  <body>
+    <h2>PhotoBackup test-server</h2>
+    <p>This is a test server for media uploads by PhotoBackup clients. All uploaded files will not be stored.</p>
+    <p><a href='http://photobackup.github.io/'>More about PhotoBackup protocol and clients</a>.</p>
+
+    <p> The configured password is: <%=Config[:plaintext_password] %> </p>
+
+    <p> Available routes: </p>
+
+    <ul>
+      <li><code> POST /</code>
+        <br>Upload file with multipart form parameter "upfile". Needs the "password" param with a SHA512 hashed password. Uploaded files will be MD5 hashed and checked for detecting duplicate uploads and respond with a 409.
+      </li>
+      <li><code> POST /test</code>
+        <br>Test call. Needs valid "password".
+      </li>
+      <li><code> POST /reset</code>
+        <br>Delete all stored md5 hashes of the files.
+      </li>
+    </ul>
+    <p>Source code on <a href='https://github.com/zealot128/photobackup-test-server'>Github</a>.</p>
+  </body>
+</html>

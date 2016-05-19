@@ -20,7 +20,7 @@ class PhotobackupTestServer < Sinatra::Base
   end
 
   get "/" do
-    "This is the Photobackup Test-Server.\n\nThe configured password is: #{Config[:plaintext_password]}\n\nAvailable routes:\nPOST /\nPOST /test"
+    erb :index
   end
 
   post "/test" do
