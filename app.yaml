@@ -1,0 +1,4 @@
+api_version: 1
+entrypoint: bundle exec rackup -p $PORT
+runtime: ruby
+vm: true
